@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fairmall-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fairmall-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fairmall-member" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fairmall-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fairmall-product" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fairmall-ware" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/fairmall.iml" filepath="$PROJECT_DIR$/fairmall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fairmall-common/fairmall-common.iml" filepath="$PROJECT_DIR$/fairmall-common/fairmall-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fairmall-gateway/fairmall-gateway.iml" filepath="$PROJECT_DIR$/fairmall-gateway/fairmall-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fairmall-member/fairmall-member.iml" filepath="$PROJECT_DIR$/fairmall-member/fairmall-member.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fairmall-order/fairmall-order.iml" filepath="$PROJECT_DIR$/fairmall-order/fairmall-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fairmall-product/fairmall-product.iml" filepath="$PROJECT_DIR$/fairmall-product/fairmall-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fairmall-ware/fairmall-ware.iml" filepath="$PROJECT_DIR$/fairmall-ware/fairmall-ware.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="fairmall-common" />
+        <module name="fairmall-gateway" />
+        <module name="fairmall-member" />
+        <module name="fairmall-order" />
+        <module name="fairmall-product" />
+        <module name="fairmall-ware" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="fairmall" target="1.5" />
+      <module name="fairmall-common" target="1.5" />
+      <module name="fairmall-gateway" target="1.5" />
+      <module name="fairmall-member" target="1.5" />
+      <module name="fairmall-order" target="1.5" />
+      <module name="fairmall-product" target="1.5" />
+      <module name="fairmall-ware" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
