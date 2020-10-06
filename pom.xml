@@ -12,6 +12,12 @@
     <!--子模块-->
     <modules>
         <module>fairmall-common</module>
+        <module>fairmall-gateway</module>
+        <module>fairmall-ware</module>
+        <module>fairmall-product</module>
+        <module>fairmall-order</module>
+        <module>fairmall-member</module>
+
     </modules>
     <!--打包-->
     <packaging>pom</packaging>
