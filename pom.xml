@@ -36,6 +36,7 @@
         <swagger.version>2.9.2</swagger.version>
         <jetcache.version>2.5.16</jetcache.version>
         <mybatis-plus.version>3.1.0</mybatis-plus.version>
+        <redis.version>2.1.4.RELEASE</redis.version>
     </properties>
 
     <!-- 子模块继承之后，提供作用：锁定版本+子模块不用写groupId和version  -->
@@ -112,6 +113,12 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger.version}</version>
+            </dependency>
+            <!--Redis缓存-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${redis.version}</version>
             </dependency>
             <!--jetcache缓存 -->
             <dependency>
