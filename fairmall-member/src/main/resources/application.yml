@@ -1,0 +1,33 @@
+# 数据库
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/fairmall
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+
+# 日志文件
+logging:
+  level:
+    com.yidu.tdpt: debug
+    java.sql.PreparedStatement: debug
+    io.swagger.models.parameters.AbstractSerializableParameter: error
+  path: logs/${spring.application.name}
+  file:
+    max-size: 1GB
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+platform:
+  auth:
+    enabled: false
