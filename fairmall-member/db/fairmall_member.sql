@@ -5,23 +5,23 @@
  Source Server Type    : MySQL
  Source Server Version : 80020
  Source Host           : localhost:3306
- Source Schema         : fairmall
+ Source Schema         : fairmall_member
 
  Target Server Type    : MySQL
  Target Server Version : 80020
  File Encoding         : 65001
 
- Date: 10/10/2020 10:27:33
+ Date: 10/10/2020 10:42:38
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for ums_growth_change_history
+-- Table structure for growth_change_history
 -- ----------------------------
-DROP TABLE IF EXISTS `ums_growth_change_history`;
-CREATE TABLE `ums_growth_change_history`  (
+DROP TABLE IF EXISTS `growth_change_history`;
+CREATE TABLE `growth_change_history`  (
   `id` bigint(0) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `member_id` bigint(0) NULL DEFAULT NULL COMMENT 'member_id',
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT 'create_time',
@@ -29,13 +29,17 @@ CREATE TABLE `ums_growth_change_history`  (
   `note` varchar(0) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '备注',
   `source_type` tinyint(0) NULL DEFAULT NULL COMMENT '积分来源[0-购物，1-管理员修改]',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '成长值变化历史记录' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '成长值变化历史记录' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for ums_integration_change_history
+-- Records of growth_change_history
 -- ----------------------------
-DROP TABLE IF EXISTS `ums_integration_change_history`;
-CREATE TABLE `ums_integration_change_history`  (
+
+-- ----------------------------
+-- Table structure for integration_change_history
+-- ----------------------------
+DROP TABLE IF EXISTS `integration_change_history`;
+CREATE TABLE `integration_change_history`  (
   `id` bigint(0) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `member_id` bigint(0) NULL DEFAULT NULL COMMENT 'member_id',
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT 'create_time',
@@ -43,13 +47,17 @@ CREATE TABLE `ums_integration_change_history`  (
   `note` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '备注',
   `source_tyoe` tinyint(0) NULL DEFAULT NULL COMMENT '来源[0->购物；1->管理员修改;2->活动]',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '积分变化历史记录' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '积分变化历史记录' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for ums_member
+-- Records of integration_change_history
 -- ----------------------------
-DROP TABLE IF EXISTS `ums_member`;
-CREATE TABLE `ums_member`  (
+
+-- ----------------------------
+-- Table structure for member
+-- ----------------------------
+DROP TABLE IF EXISTS `member`;
+CREATE TABLE `member`  (
   `id` bigint(0) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `level_id` bigint(0) NULL DEFAULT NULL COMMENT '会员等级id',
   `username` char(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户名',
@@ -69,13 +77,17 @@ CREATE TABLE `ums_member`  (
   `status` tinyint(0) NOT NULL DEFAULT 0 COMMENT '启用状态',
   `create_time` datetime(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0) COMMENT '注册时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '会员' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '会员' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for ums_member_collect_spu
+-- Records of member
 -- ----------------------------
-DROP TABLE IF EXISTS `ums_member_collect_spu`;
-CREATE TABLE `ums_member_collect_spu`  (
+
+-- ----------------------------
+-- Table structure for member_collect_spu
+-- ----------------------------
+DROP TABLE IF EXISTS `member_collect_spu`;
+CREATE TABLE `member_collect_spu`  (
   `id` bigint(0) NOT NULL COMMENT 'id',
   `member_id` bigint(0) NULL DEFAULT NULL COMMENT '会员id',
   `spu_id` bigint(0) NULL DEFAULT NULL COMMENT 'spu_id',
@@ -83,26 +95,34 @@ CREATE TABLE `ums_member_collect_spu`  (
   `spu_img` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT 'spu_img',
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT 'create_time',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '会员收藏的商品' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '会员收藏的商品' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for ums_member_collect_subject
+-- Records of member_collect_spu
 -- ----------------------------
-DROP TABLE IF EXISTS `ums_member_collect_subject`;
-CREATE TABLE `ums_member_collect_subject`  (
+
+-- ----------------------------
+-- Table structure for member_collect_subject
+-- ----------------------------
+DROP TABLE IF EXISTS `member_collect_subject`;
+CREATE TABLE `member_collect_subject`  (
   `id` bigint(0) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `subject_id` bigint(0) NULL DEFAULT NULL COMMENT 'subject_id',
   `subject_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT 'subject_name',
   `subject_img` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT 'subject_img',
   `subject_urll` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '活动url',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '会员收藏的专题活动' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '会员收藏的专题活动' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for ums_member_level
+-- Records of member_collect_subject
 -- ----------------------------
-DROP TABLE IF EXISTS `ums_member_level`;
-CREATE TABLE `ums_member_level`  (
+
+-- ----------------------------
+-- Table structure for member_level
+-- ----------------------------
+DROP TABLE IF EXISTS `member_level`;
+CREATE TABLE `member_level`  (
   `id` bigint(0) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '等级名称',
   `growth_point` int(0) NULL DEFAULT NULL COMMENT '等级需要的成长值',
@@ -114,13 +134,17 @@ CREATE TABLE `ums_member_level`  (
   `priviledge_birthday` tinyint(0) NULL DEFAULT NULL COMMENT '是否有生日特权',
   `note` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '会员等级' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '会员等级' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for ums_member_login_log
+-- Records of member_level
 -- ----------------------------
-DROP TABLE IF EXISTS `ums_member_login_log`;
-CREATE TABLE `ums_member_login_log`  (
+
+-- ----------------------------
+-- Table structure for member_login_log
+-- ----------------------------
+DROP TABLE IF EXISTS `member_login_log`;
+CREATE TABLE `member_login_log`  (
   `id` bigint(0) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `member_id` bigint(0) NULL DEFAULT NULL COMMENT 'member_id',
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
@@ -128,13 +152,17 @@ CREATE TABLE `ums_member_login_log`  (
   `city` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT 'city',
   `login_type` tinyint(1) NULL DEFAULT NULL COMMENT '登录类型[1-web，2-app]',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '会员登录记录' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '会员登录记录' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for ums_member_receive_address
+-- Records of member_login_log
 -- ----------------------------
-DROP TABLE IF EXISTS `ums_member_receive_address`;
-CREATE TABLE `ums_member_receive_address`  (
+
+-- ----------------------------
+-- Table structure for member_receive_address
+-- ----------------------------
+DROP TABLE IF EXISTS `member_receive_address`;
+CREATE TABLE `member_receive_address`  (
   `id` bigint(0) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `member_id` bigint(0) NULL DEFAULT NULL COMMENT 'member_id',
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '收货人姓名',
@@ -147,13 +175,17 @@ CREATE TABLE `ums_member_receive_address`  (
   `areacode` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '省市区代码',
   `default_status` tinyint(1) NULL DEFAULT NULL COMMENT '是否默认',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '会员收货地址' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '会员收货地址' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for ums_member_statistics_info
+-- Records of member_receive_address
 -- ----------------------------
-DROP TABLE IF EXISTS `ums_member_statistics_info`;
-CREATE TABLE `ums_member_statistics_info`  (
+
+-- ----------------------------
+-- Table structure for member_statistics_info
+-- ----------------------------
+DROP TABLE IF EXISTS `member_statistics_info`;
+CREATE TABLE `member_statistics_info`  (
   `id` bigint(0) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `member_id` bigint(0) NULL DEFAULT NULL COMMENT '会员id',
   `consume_amount` decimal(18, 4) NULL DEFAULT NULL COMMENT '累计消费金额',
@@ -170,6 +202,10 @@ CREATE TABLE `ums_member_statistics_info`  (
   `collect_comment_count` int(0) NULL DEFAULT NULL COMMENT '收藏的评论数量',
   `invite_friend_count` int(0) NULL DEFAULT NULL COMMENT '邀请的朋友数量',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '会员统计信息' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '会员统计信息' ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of member_statistics_info
+-- ----------------------------
 
 SET FOREIGN_KEY_CHECKS = 1;
