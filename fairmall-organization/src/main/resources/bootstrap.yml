@@ -3,10 +3,10 @@ server:
 spring:
   application:
     name: fairmall-organization
-#  cloud:
-#    nacos:
-#      discovery:
-#        server-addr: ${REGISTER_HOST:127.0.0.1}:${REGISTER_PORT:8848}
-#      config:
-#        server-addr: ${REGISTER_HOST:127.0.0.1}:${REGISTER_PORT:8848}
-#        file-extension: yml
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${REGISTER_HOST:127.0.0.1}:${REGISTER_PORT:8848}
+      config:
+        server-addr: ${REGISTER_HOST:127.0.0.1}:${REGISTER_PORT:8848}
+        file-extension: yml
