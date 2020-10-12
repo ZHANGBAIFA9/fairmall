@@ -81,8 +81,7 @@ public class DateUtils {
     /**
      * Calculates months between two date.
      * @param from the from date
-     * @param to
-     *            the to date
+     * @param to the to date
      * @return the number of months
      */
 
