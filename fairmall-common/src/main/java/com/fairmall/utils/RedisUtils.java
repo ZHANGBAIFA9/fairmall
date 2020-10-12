@@ -9,6 +9,7 @@ import org.springframework.data.redis.support.atomic.RedisAtomicLong;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -22,7 +23,8 @@ import java.util.concurrent.TimeUnit;
  */
 @Component
 public class RedisUtils {
-    @Autowired
+//    @Autowired
+    @Resource
     private RedisTemplate<String, Object> redisTemplate;
     // 30s 超时时间
     private static final long DEFAULT_EXPIRE = 30;

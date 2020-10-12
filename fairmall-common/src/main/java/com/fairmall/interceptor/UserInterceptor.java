@@ -14,10 +14,10 @@ import org.springframework.web.servlet.HandlerInterceptor;
  */
 @Slf4j
 @Configuration
-@ComponentScan(basePackages = { "com.fairmall.fairmall-auth.client" })
+//@ComponentScan(basePackages = { "com.fairmall.fairmall-auth.client" })
 public class UserInterceptor implements HandlerInterceptor {
-    @Value("")
-    private boolean authEnabled;
+//    @Value("")
+//    private boolean authEnabled;
 
 
 
